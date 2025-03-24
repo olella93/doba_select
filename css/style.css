@@ -54,3 +54,12 @@ button{
 button:hover{
     background: #a00f0d;
 }
+
+#recommendations {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: black;
+    border-radius: 8px;
+    color: #fff;
+}
+
