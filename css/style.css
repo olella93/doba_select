@@ -1,3 +1,9 @@
 body{
-    background-color: bisque;
+    background-color: black;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: rgb(189, 132, 132);
 }
+
+.container
