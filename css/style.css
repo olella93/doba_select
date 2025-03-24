@@ -39,3 +39,14 @@ header img {
     border-radius: 4px 0 0 4px;
     font-size: 16px;
 }
+
+button{
+    padding: 10px 20px;
+    background: #800f0d;
+    border: 1px solid #ccc;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 0 4px 4px 0;
+    transition: background 0.2s;
+}
