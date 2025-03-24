@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOBA</title>
+
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <img src="/imgs/doba copy.png" alt="Doba Logo">
+        </header>
+        <h1>DOBA</h1>
+        <div class="search-bar">
+                <input type="text" id="genreInput" placeholder="Enter genre (e.g. , Rock, Rap)">
+                <button onclick="getRecommendations()">Get Recommendations</button>
+        </div>
+        <div id="recommendations"></div>
+        
+        <script src="src/index.js"></script>
+    </div>
+</body>
+</html>
