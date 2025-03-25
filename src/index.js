@@ -9,16 +9,27 @@ function getRecommendations() {
         return;
     }
 
-    //fetch artists related to the genre from Deezer API
-    fetch(`https://api.deezer.com/search/artist?q=${genre}`)
-    .then(response => response.json ())
+    //fetch artists related to the genre from my API
+    fetch(`https://doba-select-db.vercel.app/artists`)
+    .then(response =>{
+        if (!response.ok){
+            throw new Error("Network response was not ok");
+        }
+        return response.json();
+    })
     .then(data => {
-        displayRecommendations(data.data);
+        if (data.artists && Array.isArray(data.artists)){
+            displayRecommendations(data.artists);
+        } else {
+            throw new Error("Invalid data format received");
+        }
+        
     })
     .catch(error => {
         console.error("Error fetching data:", error);
         alert("Something went wrong. Please try again!");
     });
+
 }
 
 //function to display artist recommendation on page
