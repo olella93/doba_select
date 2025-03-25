@@ -29,7 +29,7 @@ function displayRecommendations(artists) {
     // Loop through the artists to create elements for them
     artists.forEach(artist => {
         const artistElement = document.createElement("div");
-        artistElement.classList.add("artist-card"); // add a css class for styling
+        artistElement.classList.add("artist-card"); // styling
 
         artistElement.innerHTML = `
         <div>
