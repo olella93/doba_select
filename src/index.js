@@ -42,7 +42,6 @@ function displayRecommendations(artists) {
         `;
 
         recommendationsDiv.appendChild(artistElement);
-        //fetchDeezerThumbnail(artist.name);
 
         // Check cache before fetching from Deezer
         checkCache(artist.name).then(cachedImage => {
