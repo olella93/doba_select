@@ -1,4 +1,4 @@
-const API_KEY = "1725fece22768045e16bb3c4f649f4e3"; 
+const LASTFM_API_KEY = "1725fece22768045e16bb3c4f649f4e3"; 
 
 function getRecommendations() {
     let genre = document.getElementById("genreInput").value.trim().toLowerCase();
@@ -9,7 +9,7 @@ function getRecommendations() {
     }
 
     // Last.fm API to get top artists for a genre (tag)
-    fetch(`https://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag=${genre}&api_key=${API_KEY}&format=json`)
+    fetch(`https://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag=${genre}&api_key=${LASTFM_API_KEY}&format=json`)
     .then(response => response.json())
     .then(data => {
         if (data.topartists && data.topartists.artist.length > 0) {
@@ -33,16 +33,40 @@ function displayRecommendations(artists) {
         const artistElement = document.createElement("div");
         artistElement.classList.add("artist-card");
 
-
         artistElement.innerHTML = `
             <div>
                 <h3>${artist.name}</h3>
-                <img src="${artist.image[2]['#text']}" alt="${artist.name}">
+                <div id="media-${artist.name.replace(/\s/g, '')}"></div>
             </div>
         `;
 
         recommendationsDiv.appendChild(artistElement);
+        fetchDeezerThumbnail(artist.name);
+
     });
 }
+
+//Fetching deezer preview
+function fetchDeezerThumbnail(artistName) {
+    const deezerApiUrl = `https://api.deezer.com/search/artist?q=${artistName}`;
+    const proxyUrl = `https://corsproxy.io/?${encodeURIComponent(deezerApiUrl)}`;
+
+    fetch(proxyUrl)
+        .then(response => response.json())
+        .then(data => {
+            if (data.data && data.data.length > 0) {
+                const artistImage = data.data[0].picture_medium || data.data[0].picture;
+                if (artistImage) {
+                    document.getElementById(`media-${artistName.replace(/\s/g, '')}`).innerHTML = `
+                        <img src="${artistImage}" alt="${artistName}" width="100">
+                    `;
+                }
+            } else {
+                console.error("No image found for", artistName);
+            }
+        })
+        .catch(error => console.error("Error fetching Deezer image:", error));
+}
+
 
 document.getElementById("recommend-btn").addEventListener("click", getRecommendations);
