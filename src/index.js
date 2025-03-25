@@ -9,7 +9,7 @@ function getRecommendations() {
     }
 
     // Last.fm API to get top artists for a genre (tag)
-    fetch(`http://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag=${genre}&api_key=${API_KEY}&format=json`)
+    fetch(`https://ws.audioscrobbler.com/2.0/?method=tag.gettopartists&tag=${genre}&api_key=${API_KEY}&format=json`)
     .then(response => response.json())
     .then(data => {
         if (data.topartists && data.topartists.artist.length > 0) {
@@ -32,6 +32,7 @@ function displayRecommendations(artists) {
     artists.forEach(artist => {
         const artistElement = document.createElement("div");
         artistElement.classList.add("artist-card");
+
 
         artistElement.innerHTML = `
             <div>
