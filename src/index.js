@@ -19,7 +19,15 @@ function getRecommendations() {
     })
     .then(data => {
         if (data.artists && Array.isArray(data.artists)){
-            displayRecommendations(data.artists);
+            const filteredArtists = data.artists.filter(artist => 
+                artist.name.toLowerCase().includes(genre.toLowerCase())
+            );
+
+            if (filteredArtists.length === 0) {
+                alert("No artists found for this genre!");
+            } else {
+                displayRecommendations(filteredArtists);
+            }
         } else {
             throw new Error("Invalid data format received");
         }
@@ -29,11 +37,17 @@ function getRecommendations() {
         console.error("Error fetching data:", error);
         alert("Something went wrong. Please try again!");
     });
-
 }
 
 //function to display artist recommendation on page
 function displayRecommendations(artists) {
+    if (!artists || !Array.isArray(artists)) {
+        console.error("Invalid artists data:", artists);
+        alert("Invalid artists data received. Please try again!");
+        return;
+    }
+
+    
     const recommendationsDiv = document.getElementById("recommendations");
     recommendationsDiv.innerHTML = ""; //clears previous results
 
