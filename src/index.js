@@ -28,8 +28,18 @@ function displayRecommendations(artists) {
 
     // Loop through the artists to create elements for them
     artists.forEach(artist => {
-        const
-    })
+        const artistElement = document.createElement("div");
+        artistElement.classList.add("artist-card"); // add a css class for styling
+
+        artistElement.innerHTML = `
+        <div>
+            <h3>${artist.name}</h3>
+            <img src="${artist.picture_medium}" alt="${artist.name}">
+        </div>
+        `;
+
+        recommendationsDiv.appendChild(artistElement);
+    });
 }
 
 
