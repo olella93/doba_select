@@ -1,4 +1,147 @@
-{
-    "artists": []
-  }
-  
+[
+    {
+        "id": "1",
+        "name": "Megan Thee Stallion",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/55a20b812fec74d0a72d870545fc2123/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "2",
+        "name": "Baby Keem",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/ec4d1dc297efd82066b110137a96b2c6/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "3",
+        "name": "SLEEPY HALLOW",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/30ebada71f1e12c9dd62d877e49ee8df/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "4",
+        "name": "Lil Tecca",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/700e34de9be6b54dc8630453303e108b/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "5",
+        "name": "Rod Wave",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/bd5efbe8b704ab2cf4bee98d7af9ea1c/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "6",
+        "name": "bbno$",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/569a34540df2ce8b531794b2e516eef1/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "7",
+        "name": "The Kid Laroi",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/361d7116a0f388bef33410c71599a764/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "8",
+        "name": "xxxtentacion",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/df0446e79b9b85b8bb5d5c87211deeb6/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "9",
+        "name": "Bizarrap",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/e121c1ef9b1135e6a5b71c1e65ab10b4/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "10",
+        "name": "Young Nudy",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/f401a1ae3644e3df4e51efb2ae4cd5d0/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "11",
+        "name": "Baco Exu do Blues",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/89bdee0476eabe1f27ce9acbdfc2e6b3/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "12",
+        "name": "Smino",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/b72bf80553b73f3910950806d4e2ee38/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "13",
+        "name": "Agust D",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/99e62e114568aa31037b106bc52a5fd0/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "14",
+        "name": "Juice WRLD",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/924a4357edbf26fde6770e784196357c/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "15",
+        "name": "The Game",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/b72ac413fcafb75eb393c327c48fd493/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "16",
+        "name": "Lil Baby",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/e0849151824e9e7f0106b1a7226a3240/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "17",
+        "name": "Eminem",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/19cc38f9d69b352f718782e7a22f9c32/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "18",
+        "name": "Don Toliver",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/881a10c54b47201c8c850ecddaf4bb1c/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "19",
+        "name": "Gunna",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/f6ae30d19f7e865c79b070de2087bd96/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "20",
+        "name": "A BOOGIE WIT DA HOODIE",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/0e6b5b8854314687229b003a7e7b547c/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "21",
+        "name": "Polo G",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/9faf91af495202aeab93e2d91b975851/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "22",
+        "name": "2Pac",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/7be1be44b68b21641c2511e1034bc4c9/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "23",
+        "name": "YoungBoy Never Broke Again",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/d8d4dbdd6d5eb10491c8dc3b5370ae7e/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "24",
+        "name": "50 Cent",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/58da3cca2d598e43c7a7823cf75277e5/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "25",
+        "name": "Lil Wayne",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/1c528e28f04dc1c996def51f6c1f3a33/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "26",
+        "name": "Doechii",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/b2ee54b63e3a3485b6aed609fd320521/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "27",
+        "name": "Lil Tjay",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/0a11bc314161acb8b06e12d72e85abe6/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "28",
+        "name": "Lil Durk",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/9c701b4a89e18014db337bfb03c9311e/250x250-000000-80-0-0.jpg"
+    },
+    {
+        "id": "29",
+        "name": "Little Simz",
+        "thumbnail": "https://cdn-images.dzcdn.net/images/artist/f36e7a6e40e7d6f79116ba30365ad9f9/250x250-000000-80-0-0.jpg"
+    }
+]
