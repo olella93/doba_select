@@ -190,3 +190,11 @@ function startGame() {
             alert("Failed to fetch trivia. Try again later!");
         });
 }
+
+// Function to check the user's guess
+function checkGuess() {
+    let userGuess = document.getElementById("artistGuess").value.trim().toLowerCase();
+    let resultMessage = document.getElementById("resultMessage");
+
+
+}
