@@ -143,10 +143,11 @@ function toggleMenu() {
     if (!menu.classList.contains("show")) {
         aboutSection.style.display = "none";
     }
+}
 
 
 document.getElementById("recommend-btn").addEventListener("click", getRecommendations);
-}
+
 
 
 // guess the song trivia
