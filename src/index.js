@@ -81,7 +81,7 @@ function fetchDeezerThumbnail(artistName) {
                 const artistImage = data.data[0].picture_medium || data.data[0].picture;
                 if (artistImage) {
                     document.getElementById(`media-${artistName.replace(/\s/g, '')}`).innerHTML = `<img src="${artistImage}" alt="${artistName}" width="100">`;
-                    saveToCache(artistName, artistImage); // Save to cache
+                    saveToCache(artistName, artistImage); 
                 }
             } else {
                 console.error("No image found for", artistName);
@@ -208,4 +208,6 @@ function checkGuess() {
         resultMessage.innerText = "❌ Incorrect! Try again.";
         resultMessage.style.color = "red";
     }
+    document.getElementById("artistGuess").value = "";
 }
+
