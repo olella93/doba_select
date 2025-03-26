@@ -25,6 +25,20 @@ function getRecommendations() {
     });
 }
 
+
+// check if artist image is already cached in db.json
+async function checkCache(artistName) {
+    try {
+        let response = await fetch(MOCKAPI_URL);
+        let cachedArtists = await response.json();
+        let cachedArtist = cachedArtists.find(a => a.name.toLowerCase() === artistName.toLowerCase());
+        return cachedArtist ? cachedArtist.image : null;
+    } catch (error) {
+        console.error("Error checking cache:", error);
+        return null;
+    }
+}
+
 // Function to display recommendations
 function displayRecommendations(artists) {
     const recommendationsDiv = document.getElementById("recommendations");
@@ -53,19 +67,6 @@ function displayRecommendations(artists) {
         });
 
     });
-}
-
-// check if artist image is already cached in db.json
-async function checkCache(artistName) {
-    try {
-        let response = await fetch(MOCKAPI_URL);
-        let cachedArtists = await response.json();
-        let cachedArtist = cachedArtists.find(a => a.name.toLowerCase() === artistName.toLowerCase());
-        return cachedArtist ? cachedArtist.image : null;
-    } catch (error) {
-        console.error("Error checking cache:", error);
-        return null;
-    }
 }
 
 // fetching deezer preview
@@ -106,6 +107,26 @@ async function saveToCache(artistName, imageUrl) {
     }
 }
 
+// update artist image in db.json cache
+async function updateArtistImage(artistId, newImageUrl) {
+    try {
+        let response = await fetch(`${MOCKAPI_URL}/${artistId}`, {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ image: newImageUrl })
+        });
+
+        if (response.ok) {
+            console.log("Artist image updated successfully!");
+        } else {
+            console.error("Error updating artist:", response.statusText);
+        }
+    } catch (error) {
+        console.error("Error updating artist:", error);
+    }
+}
+
+// menu dropdown
 function toggleMenu() {
     document.querySelector(".menu").classList.toggle("show");
 }
