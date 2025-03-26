@@ -134,12 +134,19 @@ async function updateArtistImage(artistId, newImageUrl) {
 
 // menu dropdown
 function toggleMenu() {
-    document.querySelector(".menu").classList.toggle("show");
-}
+    let menu = document.querySelector(".menu");
+    let aboutSection = document.getElementById("aboutUsSection");
+
+    menu.classList.toggle("show");
+
+    // Hide the about us section when menu is closed
+    if (!menu.classList.contains("show")) {
+        aboutSection.style.display = "none";
+    }
 
 
 document.getElementById("recommend-btn").addEventListener("click", getRecommendations);
-
+}
 
 
 // guess the song trivia
@@ -225,7 +232,7 @@ function toggleAboutUs() {
         aboutSection.innerHTML = `
             <h2>About Us</h2>
             <p>Welcome to DOBA! Our music recommendation engine that helps you discover new artists based on your favorite genres. This website was created by a developer who loves music and coding. I wanted to create a platform where music enthusiasts can discover new artists and songs, and play fun music-related games.</p>
-            <p>Feel free to explore the website and enjoy the music!</p>
+            <p>Feel free to explore the website and enjoy the music recommendations!</p>
             <p>Reach out to me at 
                 <a href="mailto:richard.olella@student.moringaschool.com">
                     richard.olella@student.moringaschool.com
