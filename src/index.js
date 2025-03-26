@@ -133,3 +133,60 @@ function toggleMenu() {
 
 
 document.getElementById("recommend-btn").addEventListener("click", getRecommendations);
+
+
+
+// guess the song trivia
+function openDobaSelectTrivia() {
+    let gameContainer = document.getElementById("gameContainer");
+
+    // Toggle visibility if it already exists
+    if (gameContainer) {
+        gameContainer.style.display = gameContainer.style.display === "none" ? "block" : "none";
+        return;
+    }
+
+    // Find the dropdown menu to place the game inside it
+    let menu = document.querySelector(".menu");
+
+    // Creating the game div dynamically
+    gameContainer = document.createElement("div");
+    gameContainer.id = "gameContainer";
+    gameContainer.classList.add("guess-the-artist");
+    gameContainer.style.display = "block"; 
+    gameContainer.innerHTML = `
+        <h2>Guess the Artist</h2>
+        <p id="lyricDisplay">Click "Start Game" to get a lyric!</p>
+        <input type="text" id="artistGuess" placeholder="Enter Artist name">
+        <button onclick="checkGuess()">Submit Guess</button>
+        <button onclick="startGame()">Start Game</button>
+        <p id="resultMessage"></p>
+    `;
+
+    menu.appendChild(gameContainer); 
+}
+
+const TRIVIA_API_URL = "https://67e3226297fc65f53538d793.mockapi.io/music-recommendation/guess_the_song";
+let currentArtist = ""; 
+
+// Function to start the game by fetching a random lyric
+function startGame() {
+    fetch(TRIVIA_API_URL)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length > 0) {
+                let randomIndex = Math.floor(Math.random() * data.length);
+                let triviaItem = data[randomIndex];
+                
+                document.getElementById("lyricDisplay").innerText = triviaItem.lyric;
+                currentArtist = triviaItem.artist.toLowerCase(); 
+                document.getElementById("resultMessage").innerText = ""; 
+            } else {
+                alert("No trivia data available!");
+            }
+        })
+        .catch(error => {
+            console.error("Error fetching trivia:", error);
+            alert("Failed to fetch trivia. Try again later!");
+        });
+}
