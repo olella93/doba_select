@@ -196,5 +196,16 @@ function checkGuess() {
     let userGuess = document.getElementById("artistGuess").value.trim().toLowerCase();
     let resultMessage = document.getElementById("resultMessage");
 
+    if (userGuess === "") {
+        resultMessage.innerText = "Please enter an artist name!";
+        return;
+    }
 
+    if (userGuess === currentArtist) {
+        resultMessage.innerText = "✅ Correct! Well done!";
+        resultMessage.style.color = "green";
+    } else {
+        resultMessage.innerText = "❌ Incorrect! Try again.";
+        resultMessage.style.color = "red";
+    }
 }
