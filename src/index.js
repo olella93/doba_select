@@ -40,9 +40,17 @@ async function checkCache(artistName) {
 }
 
 // Function to display recommendations
-function displayRecommendations(artists) {
+async function displayRecommendations(artists) {
     const recommendationsDiv = document.getElementById("recommendations");
     recommendationsDiv.innerHTML = ""; 
+
+    let cachedArtists = []; 
+    try {
+        let response = await fetch(MOCKAPI_URL);
+        cachedArtists = await response.json();
+    } catch (error) {
+        console.error("Error fetching cache:", error);
+    }
 
     artists.forEach(artist => {
         const artistElement = document.createElement("div");
@@ -57,15 +65,13 @@ function displayRecommendations(artists) {
 
         recommendationsDiv.appendChild(artistElement);
 
-        // Check cache before fetching from Deezer
-        checkCache(artist.name).then(cachedImage => {
-            if (cachedImage) {
-                document.getElementById(`media-${artist.name.replace(/\s/g, '')}`).innerHTML = `<img src="${cachedImage}" alt="${artist.name}" width="100">`;
-            } else {
-                fetchDeezerThumbnail(artist.name);
-            }
-        });
-
+        // Check cache from pre-fetched data
+        let cachedArtist = cachedArtists.find(a => a.name.toLowerCase() === artist.name.toLowerCase());
+        if (cachedArtist) {
+            document.getElementById(`media-${artist.name.replace(/\s/g, '')}`).innerHTML = `<img src="${cachedArtist.image}" alt="${artist.name}" width="100">`;
+        } else {
+            fetchDeezerThumbnail(artist.name);
+        }
     });
 }
 
