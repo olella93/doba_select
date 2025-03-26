@@ -1,5 +1,5 @@
 const LASTFM_API_KEY = "1725fece22768045e16bb3c4f649f4e3";
-const DB_JSON_URL = "https://doba-select-db.vercel.app/artists"; 
+const MOCKAPI_URL = "https://67e3226297fc65f53538d793.mockapi.io/music-recommendation/artists"; 
 
 function getRecommendations() {
     let genre = document.getElementById("genreInput").value.trim().toLowerCase();
@@ -58,7 +58,7 @@ function displayRecommendations(artists) {
 // check if artist image is already cached in db.json
 async function checkCache(artistName) {
     try {
-        let response = await fetch(DB_JSON_URL);
+        let response = await fetch(MOCKAPI_URL);
         let cachedArtists = await response.json();
         let cachedArtist = cachedArtists.find(a => a.name.toLowerCase() === artistName.toLowerCase());
         return cachedArtist ? cachedArtist.image : null;
@@ -92,7 +92,7 @@ function fetchDeezerThumbnail(artistName) {
 // save artist image to db.json cache
 async function saveToCache(artistName, imageUrl) {
     try {
-        let response = await fetch(DB_JSON_URL, {
+        let response = await fetch(MOCKAPI_URL, {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify({ name: artistName, image: imageUrl })
