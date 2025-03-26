@@ -106,4 +106,9 @@ async function saveToCache(artistName, imageUrl) {
     }
 }
 
+function toggleMenu() {
+    document.querySelector(".menu").classList.toggle("show");
+}
+
+
 document.getElementById("recommend-btn").addEventListener("click", getRecommendations);
