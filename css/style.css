@@ -80,3 +80,39 @@ button:hover{
     user-select: none;
 }
 
+.menu {
+    list-style: none;
+    background: black;
+    padding: 0;
+    margin: 0;
+    display: none;
+    position: absolute;
+    top: 40px;
+    right: 10px;
+    width: 150px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.menu li {
+    padding: 10px;
+    text-align: center;
+    border-bottom: 1px solid #ccc;
+}
+
+.menu li a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.menu li:hover {
+    background: #800f0d;
+}
+
+.menu li a:hover {
+    color: #d8a4a4;
+}
+
+.menu.show {
+    display: block;
+}
+
