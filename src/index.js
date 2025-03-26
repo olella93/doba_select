@@ -216,4 +216,24 @@ function checkGuess() {
     }
     document.getElementById("artistGuess").value = "";
 }
+ 
+// about us section
+function toggleAboutUs() {
+    let aboutSection = document.getElementById("aboutUsSection");
 
+    if (!aboutSection.innerHTML) {
+        aboutSection.innerHTML = `
+            <h2>About Us</h2>
+            <p>Welcome to DOBA! Our music recommendation engine that helps you discover new artists based on your favorite genres. This website was created by a developer who loves music and coding. I wanted to create a platform where music enthusiasts can discover new artists and songs, and play fun music-related games.</p>
+            <p>Feel free to explore the website and enjoy the music!</p>
+            <p>Reach out to me at 
+                <a href="mailto:richard.olella@student.moringaschool.com">
+                    richard.olella@student.moringaschool.com
+                </a> 
+                if you have any feedback or suggestions.
+            </p>
+        `;
+    }
+
+    aboutSection.style.display = (aboutSection.style.display === "none" || aboutSection.style.display === "") ? "block" : "none";
+}
