@@ -67,3 +67,16 @@ button:hover{
     justify-content: center;
 }
 
+.navbar {
+    background-color: black;
+    padding: 10px;
+    position: relative;
+}
+
+.menu-toggle {
+    font-size: 24px;
+    color: #a00f0d;
+    cursor: pointer;
+    user-select: none;
+}
+
